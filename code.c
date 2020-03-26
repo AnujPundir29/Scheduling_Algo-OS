@@ -64,7 +64,7 @@ void merger(){
 			if(fc!=ifc){
 				while(ifc!=fc){
 					m[mc]= f[ifc];
-					mc++;
+					mc=+1;
 					ifc++;
 				}
 			}
