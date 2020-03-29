@@ -124,20 +124,22 @@ void input(){
 			printf("\nJob Type (1/2): "); scanf("%d", &map);
 			if(map==1){
 				printf("Query Id: "); scanf("%d", &f[fc].pid);
+				A:
 				printf("Arrival Time: "); scanf("%d", &t);
 				if(t<1000 || t>1200){
-					printf("\nEnter Correct time");
-					input();
+					printf("\nEnter Correct time\n");
+					goto A;
 				}
 				else{f[fc].at= t-1000;}
 				printf("Resolving Time: "); scanf("%d", &f[fc].bt);	 f[fc].rbt= f[fc].bt; 
 				fc++;
 			} else{
 				printf("Query Id: "); scanf("%d", &s[sc].pid);
+				B:
 				printf("Arrival Time: "); scanf("%d", &t); 
 				if(t<1000 || t>1200){
 					printf("\nEnter Correct time\n");
-					input();
+					goto B;
 				}
 				else {s[sc].at= t-1000; }
 				printf("Resolving Time: "); scanf("%d", &s[sc].bt);	 s[sc].rbt= s[sc].bt;
@@ -149,7 +151,7 @@ void input(){
 
 void inst(){
 	printf("\nWelcome, please follow these instruction for proper functioning of the program"
-			"\n**>Enter time in 2400 hours format. example for 10:30 am enter 10030"
+			"\n**>Enter time in 2400 hours format. example for 11:30 am enter 1130"
 			"\n**>Enter Query arrival times in ascending order, i.e., in real time arrival manner\n"
 			"\nAll Time units are in minutes. \n\n"
 			);
